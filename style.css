@@ -29,6 +29,9 @@ h1{
 }
 
 .trilho .indicador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     height: 150px;
     background-color: rgba(0, 0, 0, 0.655);
@@ -38,16 +41,27 @@ h1{
     left: 0;
     transition: .5s;
 }
-
+.trilho .indicador i{
+    color: #fff;
+    position: absolute;
+    font-size: 70px;
+}
+.bi-moon-fill{
+    opacity: 0;
+}
 .trilho.dark .indicador{
     left: 200px;
     background-color: #fff;
 }
-
+.trilho.dark .indicador .bi-moon-fill{
+    left: 50px;
+    opacity: 1;
+    color: #2e2e2e;
+    animation: rotate .5s linear  /* Aplica a animação */
+}
 .trilho.dark{
     background-color: #c3c3c3;
 }
-
 body.dark{
     background-color: #e4e4e4;
 }
@@ -55,3 +69,12 @@ body.dark{
 body.dark h1{
     color: #000;
 }
+
+@keyframes rotate {
+    from {
+      transform: rotate(320deg); /* Rotação inicial */
+    }
+    to {
+      transform: rotate(360deg); /* Rotação final (completa) */
+    }
+  }
